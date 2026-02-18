@@ -1,0 +1,264 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==================================
+   ANIMATIONS
+================================== */
+
+@keyframes dotPulse {
+  0% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.4;
+  }
+}
+
+.animate-dot-pulse {
+  animation: dotPulse 2.2s ease-in-out infinite;
+}
+
+/* ==================================
+   GLOBAL THEMES
+================================== */
+
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* DARK (default) */
+body.dark {
+  background-color: #000;
+  color: #ffffff;
+}
+
+/* LIGHT */
+body.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* ==================================
+   HERO NAME
+================================== */
+
+.hero-name {
+  transition: color 0.3s ease;
+}
+
+body.dark .hero-name {
+  color: white;
+}
+
+body.light .hero-name {
+  color: black;
+}
+
+/* OUTLINED TEXT (Mahanthi) */
+.outlined-text {
+  color: transparent;
+  transition: -webkit-text-stroke 0.3s ease;
+}
+
+body.dark .outlined-text {
+  -webkit-text-stroke: 1.5px white;
+  text-stroke: 1.5px white;
+}
+
+body.light .outlined-text {
+  -webkit-text-stroke: 1.5px black;
+  text-stroke: 1.5px black;
+}
+
+/* ==================================
+   SECTION CARDS
+================================== */
+
+.section-card {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark .section-card {
+  background-color: #18181b;
+  /* zinc-900 */
+  color: white;
+}
+
+body.light .section-card {
+  background-color: #ffffff;
+  color: black;
+  border: 1px solid #e5e7eb;
+}
+
+body.light .section-card p,
+body.light .section-card h1,
+body.light .section-card h2,
+body.light .section-card h3,
+body.light .section-card span {
+  color: black;
+}
+
+/* ==================================
+   SIDEBAR (ALWAYS DARK)
+================================== */
+
+.sidebar {
+  background-color: #0f0f0f;
+  color: white;
+}
+
+/* ==================================
+   3 DOT MENU COLOR
+================================== */
+
+.menu-dots {
+  transition: color 0.3s ease;
+}
+
+body.dark .menu-dots {
+  color: white;
+}
+
+body.light .menu-dots {
+  color: black;
+}
+
+/* ==================================
+   CUSTOM CURSOR
+================================== */
+
+body {
+  cursor: none;
+}
+
+.custom-cursor-dot {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background: currentColor;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+.custom-cursor-ring {
+  position: fixed;
+  width: 36px;
+  height: 36px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: all 0.15s ease-out;
+  z-index: 9998;
+}
+
+.custom-cursor-ring.hover {
+  width: 55px;
+  height: 55px;
+  border-width: 1px;
+  opacity: 0.6;
+}
+
+/* Disable cursor on mobile */
+@media (max-width: 768px) {
+  body {
+    cursor: auto;
+  }
+
+  .custom-cursor-dot,
+  .custom-cursor-ring {
+    display: none;
+  }
+}
+
+
+
+
+/* ==============================
+   BUTTON SWEEP ANIMATION
+============================== */
+
+.btn-sweep {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition: color 0.35s ease;
+}
+
+/* moving fill layer */
+.btn-sweep::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #55B56C;
+  /* animation color */
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+  z-index: -1;
+}
+
+/* hover effect */
+.btn-sweep:hover::before {
+  transform: translateX(0%);
+}
+
+/* text color change */
+.btn-sweep:hover {
+  color: rgba(22, 7, 7, 0.527);
+}
+
+.btn-sweep:hover {
+  color: rgba(22, 11, 11, 0.479);
+  transform: translateY(-2px);
+}
+
+
+
+
+/* =========================================
+   MOBILE RESPONSIVE FIX (<= 768px)
+========================================= */
+
+@media (max-width: 768px) {
+
+  .app-layout {
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  .sidebar {
+    display: none !important;
+  }
+
+  .hero-name {
+    font-size: 2rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .section-card {
+    padding: 20px !important;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .about-image {
+    width: 160px !important;
+    height: 160px !important;
+    margin: 0 auto;
+  }
+
+  .quick-menu {
+    width: 100% !important;
+  }
+}
