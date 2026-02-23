@@ -29,7 +29,7 @@ const Resume = () => {
                 <div className="flex gap-4">
                     {/* Download Button */}
                     <a
-                        href="/Resume/Mahesh_Resume.pdf"
+                        href="/Resume/MAHESH_MAHANTHI_RESUME.pdf"
                         download
                         className="btn-sweep rounded-lg bg-white px-6 py-2 text-sm font-semibold text-black"
                     >
@@ -38,7 +38,7 @@ const Resume = () => {
 
                     {/* View Button */}
                     <a
-                        href="/Resume/Mahesh_Resume.pdf"
+                        href="/Resume/MAHESH_MAHANTHI_RESUME.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="btn-sweep btn-sweep-dark rounded-lg border border-zinc-700 px-6 py-2 text-sm font-semibold text-white"

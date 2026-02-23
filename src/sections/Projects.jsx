@@ -51,7 +51,7 @@ const Projects = () => {
                     "JavaScript",
                     "Responsive Design",
                 ]}
-                demoLink="https://github.com/Mahesh7845/Food-industry-website-Project"
+                demoLink="https://github.com/Mahesh7845/Food_industry_web"
 
                 description="Developed a responsive food industry website with dynamic UI components.
         The project includes interactive pages, optimized layouts, and a clean user
